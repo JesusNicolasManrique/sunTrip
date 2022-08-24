@@ -1,0 +1,152 @@
+{
+   "clientes": [
+            {
+                    "id_clientes": 1,
+                    "nombre": "Jaime Hernández",
+                    "telefono": "2643528477",
+                    "restriccion_alimentos": "colesterol alto",
+                    "tipo_doc_viaje": "L",
+                    "doc_viaje": 7251048,
+                    "email": "jaimehernandez@hotmail.com",
+                "particularidades": "Silla de ruedas",
+                "fecha_nacido": "1936-02-22"
+            },
+            {
+                "id_clientes": 2,
+                "nombre": "Isidoro Lapappa",
+                "telefono": "2614825539",
+                "restriccion_alimentos": "hipertenso",
+                "tipo_doc_viaje": "D",
+                "doc_viaje": 27325628,
+                "email": "isidoro@aol.com",
+                "particularidades": "habla mucho",
+                "fecha_nacido": "1981-08-17"
+            },
+            {
+                "id_clientes": 3,
+                "nombre": "Jero Lucero",
+                "telefono": "2614252525",
+                "restriccion_alimentos": "mórbido",
+                "tipo_doc_viaje": "D",
+                "doc_viaje": 27388388,
+                "email": "jero@hotmail.com",
+                "particularidades": "mañosea con la comida",
+                "fecha_nacido": "1978-07-12"
+            },
+            {
+                "id_clientes": 6,
+                "nombre": "Gastón Ramírez",
+                "telefono": "1168429335",
+                "restriccion_alimentos": null,
+                "tipo_doc_viaje": "P",
+                "doc_viaje": 26790812,
+                "email": "gaston@mercadolibre.com.ar",
+                "particularidades": null,
+                "fecha_nacido": "1979-12-17"
+            },
+            {
+                "id_clientes": 5,
+                "nombre": "Kevin Acio",
+                "telefono": "2643528477",
+                "restriccion_alimentos": "colesterol alto",
+                "tipo_doc_viaje": "L",
+                "doc_viaje": 27251048,
+                "email": "jaimecuenca@hotmail.com",
+                "particularidades": "Silla de ruedas",
+                "fecha_nacido": "1980-02-22"
+            },
+            {
+                "id_clientes": 7,
+                "nombre": "Jaime Cuenca",
+                "telefono": "2643528477",
+                "restriccion_alimentos": "colesterol alto",
+                "tipo_doc_viaje": "L",
+                "doc_viaje": 7251048,
+                "email": "jaimecuenca@hotmail.com",
+                "particularidades": "Silla de ruedas",
+                "fecha_nacido": "1936-02-23"
+            }
+        ],
+    "reservas": [
+            {
+                "id_reserva": 1,
+                "nombre": "Jaime Hernández",
+                "bodega": "El Enemigo",
+                "icon":"mdi mdi-cloud-download",
+                "icon_type":"bg-danger",
+                "fecha_reserva": "Dentro de 55 min",
+                "cant_adultos": 3,
+                "cant_menores": 2
+            },
+            {
+                "id_reserva": 2,
+                "nombre": "Rosa Gonzalez",
+                "bodega": "Salentein",
+                "icon":"mdi mdi-clock",
+                "icon_type":"bg-primary",
+                "fecha_reserva": "Dentro de 15 min",
+                "cant_adultos": 1,
+                "cant_menores": 2
+            }
+    ],
+    "proveedores":  [
+                {
+                    "id_proveedores": 2,
+                    "nombre": "Trapiche",
+                    "telefono": "2615207600",
+                    "email": "reservas@trapiche.com.ar",
+                    "zona": "A",
+                    "tipo_proveedor": "B",
+                    "coordenadas": "-32.9727095,-68.7481394,17z\r\n",
+                    "productos":[
+                        {
+                            "id_producto": 1,
+                            "nombre": "Almuerzo VIP",
+                            "descripcion": "Almuerzo con vista a la montaña, maridado con los excelentes vinos de la cava reservada.",
+                            "costo": 12222.5
+                        },
+                        {
+                            "id_producto": 2,
+                            "nombre": "Cabalgata",
+                            "descripcion": "Recorrido desde el Cerro Arco. Hermosos paisajes con reservas de agua inaccesibles por otro medio. Horario de salida 06:15, llegada 11:45.",
+                            "costo": 19852.3
+                        },
+                        {
+                            "id_producto": 3,
+                            "nombre": "Degustación Arropes",
+                            "descripcion": "Tostadas con arrope bien calientes",
+                            "costo": 592.75
+                        }
+                    ]
+                },
+                {
+                    "id_proveedores": 3,
+                    "nombre": "Los Haroldos",
+                    "telefono": " 2634420140",
+                    "email": "mkt@familiafalasco.com",
+                    "zona": "C",
+                    "tipo_proveedor": "B",
+                    "coordenadas": "-33.061552, -68.488417",
+                    "productos":[
+                        {
+                            "id_producto": 1,
+                            "nombre": "Almuerzo VIP",
+                            "descripcion": "Almuerzo con vista a la montaña, maridado con los excelentes vinos de la cava reservada.",
+                            "costo": 12222.5
+                        },
+                        {
+                            "id_producto": 2,
+                            "nombre": "Cabalgata",
+                            "descripcion": "Recorrido desde el Cerro Arco. Hermosos paisajes con reservas de agua inaccesibles por otro medio. Horario de salida 06:15, llegada 11:45.",
+                            "costo": 19852.3
+                        },
+                        {
+                            "id_producto": 3,
+                            "nombre": "Degustación Arropes",
+                            "descripcion": "Tostadas con arrope bien calientes",
+                            "costo": 592.75
+                        }
+                    ]
+                }
+    ]
+}

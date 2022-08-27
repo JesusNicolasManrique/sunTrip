@@ -54,10 +54,11 @@ class Sidebar extends Component {
   render () {
     return (
       <nav className="sidebar sidebar-offcanvas" id="sidebar">
-        <div className="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+       {/*  <div className="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
           <a className="sidebar-brand brand-logo" href="index.html"><img src={require('../../assets/images/logo.svg')} alt="logo" /></a>
           <a className="sidebar-brand brand-logo-mini" href="index.html"><img src={require('../../assets/images/logo-mini.svg')} alt="logo" /></a>
-        </div>
+        </div> */}
+        <h1>Suntrip</h1>
         <ul className="nav">
           <li className="nav-item profile">
             <div className="profile-desc">
@@ -67,8 +68,8 @@ class Sidebar extends Component {
                   <span className="count bg-success"></span>
                 </div>
                 <div className="profile-name">
-                  <h5 className="mb-0 font-weight-normal"><Trans>Henry Klein</Trans></h5>
-                  <span><Trans>Gold Member</Trans></span>
+                  <h5 className="mb-0 font-weight-normal"><Trans>Maykon Jeremias</Trans></h5>
+                  <span><Trans>Ventas - Administracion</Trans></span>
                 </div>
               </div>
               <Dropdown alignRight>
@@ -121,7 +122,7 @@ class Sidebar extends Component {
               <span className="menu-title"><Trans>Dashboard</Trans></span>
             </Link>
           </li>
-          <li className={ this.isPathActive('/basic-ui') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
+          {/* <li className={ this.isPathActive('/basic-ui') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
             <div className={ this.state.basicUiMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('basicUiMenuOpen') } data-toggle="collapse">
               <span className="menu-icon">
                 <i className="mdi mdi-laptop"></i>
@@ -247,7 +248,7 @@ class Sidebar extends Component {
               </span>
               <span className="menu-title"><Trans>Documentation</Trans></span>
             </a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     );

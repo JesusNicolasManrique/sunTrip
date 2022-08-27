@@ -1,19 +1,44 @@
 
 import React, { Component } from 'react'
+import { useQuery } from 'react-query'
+import axios from 'axios' 
 import { Doughnut } from 'react-chartjs-2';
-class Cobros extends Component {
-    transactionHistoryData =  {
-        labels: ["Pesos", "Dolares","Reales"],
+const cacheTime = {cacheTime: 5000, refetchIntervalInBackground:true}
+function Cobros (props){
+  const {endpoint} = props
+  const fetchCobros = ()=>{
+    return axios.get(`http://localhost:3001/${endpoint}`)
+  }
+  const {isLoading, data, IsError, error, IsFetching} = useQuery('getCobros', fetchCobros, cacheTime)
+  
+  if(isLoading){
+     return <h2>Is loading</h2>
+  } 
+
+  let label=[]
+  let value=[] 
+  let color=[] 
+  data.data.map(cobros =>{
+    label.push(cobros.label);
+    value.push(cobros.valor);
+    color.push(cobros.color)
+  })
+
+  const total = data.data.reduce((accumulator, object) => {
+    return accumulator + object.valor;
+  }, 0);
+
+
+let transactionHistoryData =  {
+        labels:label,
         datasets: [{
-            data: [55, 25, 20],
-            backgroundColor: [
-              "red","#00d25b","#ffab00"
-            ]
+            data: value,
+            backgroundColor: color
           }
         ]
       };
     
-      transactionHistoryOptions = {
+let transactionHistoryOptions = {
         responsive: true,
         maintainAspectRatio: true,
         segmentShowStroke: false,
@@ -31,13 +56,15 @@ class Cobros extends Component {
         }
       }
     
-      sliderSettings = {
+let sliderSettings = {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1
       }
-    render() {
+
+
+      
         return (
             <>
             <div className="col-md-4 grid-margin stretch-card">
@@ -45,25 +72,34 @@ class Cobros extends Component {
               <div className="card-body">
                 <h4 className="card-title">Historial de Cobros</h4>
                 <div className="aligner-wrapper">
-                  <Doughnut data={this.transactionHistoryData} options={this.transactionHistoryOptions} />
+                  <Doughnut data={transactionHistoryData} options={transactionHistoryOptions} settings={sliderSettings} />
                   <div className="absolute center-content">
-                    <h5 className="font-weight-normal text-whiite text-center mb-2 text-white">1200</h5>
+                    <h5 className="font-weight-normal text-whiite text-center mb-2 text-white">${total}</h5>
                     <p className="text-small text-muted text-center mb-0">Total</p>
                   </div>
                 </div>  
                 <div className="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
                   <div className="text-md-center text-xl-left">
-                    <h6 className="mb-1">Pagos en Efectivo</h6>
-                    <p className="text-muted mb-0">07 Jan 2019, 09:12AM</p>
+                    <h6 className="mb-1">Pagos en Pesos</h6>
+                    <p className="text-muted mb-0">07 Set 2022, 09:12AM</p>
                   </div>
                   <div className="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                    <h6 className="font-weight-bold mb-0">$236</h6>
+                    <h6 className="font-weight-bold mb-0">${value[0]}</h6>
                   </div>
                 </div>
                 <div className="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
                   <div className="text-md-center text-xl-left">
                     <h6 className="mb-1">Pagos en Dolares</h6>
-                    <p className="text-muted mb-0">07 Jan 2019, 09:12AM</p>
+                    <p className="text-muted mb-0">07 Set 2022, 10:22AM</p>
+                  </div>
+                  <div className="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                    <h6 className="font-weight-bold mb-0">$670</h6>
+                  </div>
+                </div>
+                <div className="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                  <div className="text-md-center text-xl-left">
+                    <h6 className="mb-1">Pagos en Rreales</h6>
+                    <p className="text-muted mb-0">07 Set 2022, 10:30AM</p>
                   </div>
                   <div className="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
                     <h6 className="font-weight-bold mb-0">$593</h6>
@@ -75,6 +111,6 @@ class Cobros extends Component {
             </>
         )
     }
-}
+
 
 export default Cobros

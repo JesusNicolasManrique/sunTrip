@@ -30,11 +30,11 @@ class Navbar extends Component {
           <ul className="navbar-nav navbar-nav-right">
             <Dropdown alignRight as="li" className="nav-item d-none d-lg-block">
                 <Dropdown.Toggle className="nav-link btn btn-success create-new-button no-caret">
-                + <Trans>Create New Project</Trans>
+                + <Trans>Crear</Trans>
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu className="navbar-dropdown preview-list create-new-dropdown-menu">
-                  <h6 className="p-3 mb-0"><Trans>Projects</Trans></h6>
+                  <h6 className="p-3 mb-0"><Trans>Categorias</Trans></h6>
                   <Dropdown.Divider />
                   <Dropdown.Item href="!#" onClick={evt =>evt.preventDefault()} className="preview-item">
                     <div className="preview-thumbnail">
@@ -43,7 +43,7 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="preview-item-content">
-                      <p className="preview-subject ellipsis mb-1"><Trans>Software Development</Trans></p>
+                      <p className="preview-subject mb-1"><Trans>Nuevo Usuario</Trans></p>
                     </div>
                   </Dropdown.Item>
                   <Dropdown.Divider />
@@ -54,7 +54,7 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="preview-item-content">
-                      <p className="preview-subject ellipsis mb-1"><Trans>UI Development</Trans></p>
+                      <p className="preview-subject mb-1"><Trans>Nueva Reserva</Trans></p>
                     </div>
                   </Dropdown.Item>
                   <Dropdown.Divider />
@@ -65,11 +65,10 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="preview-item-content">
-                      <p className="preview-subject ellipsis mb-1"><Trans>Software Testing</Trans></p>
+                      <p className="preview-subject mb-1"><Trans>Nuevo Producto</Trans></p>
                     </div>
                   </Dropdown.Item>
                   <Dropdown.Divider />
-                  <p className="p-3 mb-0 text-center"><Trans>See all projects</Trans></p>
                 </Dropdown.Menu>
               </Dropdown>
             <li className="nav-item d-none d-lg-block">
@@ -83,7 +82,7 @@ class Navbar extends Component {
                 <span className="count bg-success"></span>
               </Dropdown.Toggle>
               <Dropdown.Menu className="navbar-dropdown preview-list">
-                  <h6 className="p-3 mb-0"><Trans>Messages</Trans></h6>
+                  <h6 className="p-3 mb-0"><Trans>Mensajes</Trans></h6>
                   <Dropdown.Divider />
                   <Dropdown.Item href="!#" onClick={evt =>evt.preventDefault()} className="preview-item">
                     <div className="preview-thumbnail">
@@ -92,8 +91,8 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="preview-item-content">
-                      <p className="preview-subject ellipsis mb-1"><Trans>Mark send you a message</Trans></p>
-                      <p className="text-muted mb-0"> 1 <Trans>Minutes ago</Trans> </p>
+                      <p className="preview-subject ellipsis mb-1"><Trans>Ya cambie la reserva de estado</Trans></p>
+                      <p className="text-muted mb-0"> 1 <Trans>Minuto atras</Trans> </p>
                     </div>
                   </Dropdown.Item>
                   <Dropdown.Divider />
@@ -104,12 +103,12 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="preview-item-content">
-                      <p className="preview-subject ellipsis mb-1"><Trans>Cregh send you a message</Trans></p>
-                      <p className="text-muted mb-0"> 15 <Trans>Minutes ago</Trans> </p>
+                      <p className="preview-subject ellipsis mb-1"><Trans>Revisar Pago reserva n234</Trans></p>
+                      <p className="text-muted mb-0"> 15 <Trans>Minutos atras</Trans> </p>
                     </div>
                   </Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item href="!#" onClick={evt =>evt.preventDefault()} className="preview-item">
+                 {/*  <Dropdown.Item href="!#" onClick={evt =>evt.preventDefault()} className="preview-item">
                     <div className="preview-thumbnail">
                       <div className="preview-icon bg-dark rounded-circle">
                         <img src={require('../../assets/images/faces/face3.jpg')} alt="profile" className="rounded-circle profile-pic" />
@@ -117,7 +116,7 @@ class Navbar extends Component {
                     </div>
                     <div className="preview-item-content">
                       <p className="preview-subject ellipsis mb-1"><Trans>Profile picture updated</Trans></p>
-                      <p className="text-muted mb-0"> 18 <Trans>Minutes ago</Trans> </p>
+                      <p className="text-muted mb-0"> 18 <Trans>Minutos atras</Trans> </p>
                     </div>
                   </Dropdown.Item>
                   <Dropdown.Divider />
@@ -211,13 +210,13 @@ class Navbar extends Component {
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <p className="p-3 mb-0 text-center"><Trans>Advanced settings</Trans></p>
+                <p className="p-3 mb-0 text-center"><Trans>Advanced settings</Trans></p>*/}
               </Dropdown.Menu>
             </Dropdown>
           </ul>
           <button className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" onClick={this.toggleOffcanvas}>
             <span className="mdi mdi-format-line-spacing"></span>
-          </button>
+          </button> 
         </div>
       </nav>
     );

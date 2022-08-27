@@ -71,24 +71,130 @@
             {
                 "id_reserva": 1,
                 "nombre": "Jaime Hernández",
-                "bodega": "El Enemigo",
+                "hotel": "Hotel Esplendor",
                 "icon":"mdi mdi-cloud-download",
                 "icon_type":"bg-danger",
-                "fecha_reserva": "Dentro de 55 min",
+                "horario_reserva": "Dentro de 55 min",
                 "cant_adultos": 3,
                 "cant_menores": 2
             },
             {
                 "id_reserva": 2,
                 "nombre": "Rosa Gonzalez",
-                "bodega": "Salentein",
+                "hotel": "Hyatt Mendoza",
                 "icon":"mdi mdi-clock",
                 "icon_type":"bg-primary",
-                "fecha_reserva": "Dentro de 15 min",
+                "horario_reserva": "Dentro de 15 min",
+                "cant_adultos": 1,
+                "cant_menores": 2
+            }, 
+            {
+                "id_reserva": 3,
+                "nombre": "Rosa Dominguez",
+                "hotel": "Hotel Mendoza",
+                "icon":"mdi mdi-clock",
+                "icon_type":"bg-warning",
+                "horario_reserva": "Dentro de 20 min",
+                "cant_adultos": 1,
+                "cant_menores": 2
+            }, 
+            {
+                "id_reserva": 4,
+                "nombre": "Marcos Dom",
+                "hotel": "Hotel Casablanca Suites",
+                "icon":"mdi mdi-clock",
+                "icon_type":"bg-primary",
+                "horario_reserva": "Dentro de 15 min",
                 "cant_adultos": 1,
                 "cant_menores": 2
             }
     ],
+    "reservasFuturas": [
+        {
+            "nombreTitularReserva": "Jaime Hernández",
+            "id_reserva": 2123,
+            "vendedor":"Maykon Jeremias",
+            "precio_venta":14500,
+            "fecha_reserva": "31 Set 2022",
+            "llegada_resera": "23 Nov 2022",
+            "medio_pago":"efectivo",
+            "estado":"A confirmar",
+            "icon_estado":"badge badge-warning"
+        },
+        {
+            "id_reserva": 2124,
+            "nombreTitularReserva": "Paula Gimenez",
+            "vendedor":"Martin Nuin",
+            "precio_venta":14500,
+            "fecha_reserva": "31 Set 2022",
+            "llegada_resera": "23 Nov 2022",
+            "cant_adultos": 3,
+            "cant_menores": 2,
+            "medio_pago":"efectivo",
+            "estado":"Venta",
+            "icon_estado":"badge badge-success"
+        },
+        {
+            "id_reserva": 2125,
+            "nombreTitularReserva": "Joao Carreras",
+            "vendedor":"Maykon Jeremias",
+            "precio_venta":12500,
+            "fecha_reserva": "1 Nov 2022",
+            "llegada_resera": "23 Nov 2022",
+            "cant_adultos": 3,
+            "cant_menores": 2,
+            "medio_pago":"efectivo",
+            "estado":"Presupuesto",
+            "icon_estado":"badge badge-danger"
+        },
+        {
+            "id_reserva": 2126,
+            "nombreTitularReserva": "Marcos Dominguez",
+            "vendedor":"Martin Nuin",
+            "precio_venta":8500,
+            "fecha_reserva": "02 Nov 2022",
+            "llegada_resera": "23 Nov 2022",
+            "cant_adultos": 3,
+            "cant_menores": 2,
+            "medio_pago":"Tarjeta de Credito",
+            "estado":"Confirmada",
+            "icon_estado":"badge badge-info"
+        },
+        {
+            "id_reserva": 2127,
+            "nombreTitularReserva": "Sebastin Gom",
+            "vendedor":"Maykon Jeremias",
+            "precio_venta":8500,
+            "fecha_reserva": "03 Nov 2022",
+            "llegada_resera": "23 Nov 2022",
+            "cant_adultos": 3,
+            "cant_menores": 2,
+            "medio_pago":"efectivo",
+            "estado":"A confirmar",
+            "icon_estado":"badge badge-warning"
+        }
+],
+    "cobros": [
+        {
+            "id_Medio": 1,
+            "label": "Pesos Argentinos",
+            "valor": 236,
+            "color":"#fc424a"
+        },
+        {
+            "id_Medio": 2,
+            "label": "Reales",
+            "valor": 670,
+            "color":"#0090e7"
+        },
+        {
+            "id_Medio": 1,
+            "label": "Dolares",
+            "valor": 593,
+            "color":"#ffab00"
+        }
+
+],
     "proveedores":  [
                 {
                     "id_proveedores": 2,

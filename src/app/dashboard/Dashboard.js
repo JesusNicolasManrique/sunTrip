@@ -14,7 +14,9 @@ function Dashboard (){
      <Finanzas/>
         <div className="row">
           {/* Aca agregar en el futuro el tamaño por props */}
-          <Cobros/>
+          <QueryClientProvider client={queryClient}>
+          <Cobros endpoint="cobros"/>
+          </QueryClientProvider>
            {/* Aca agregar en el futuro el tamaño por props */}
            <QueryClientProvider client={queryClient}>
             <ReservasDelDia endpoint="reservas"/>
@@ -22,7 +24,7 @@ function Dashboard (){
         </div>
         <div className="row">
         <QueryClientProvider client={queryClient}>
-          <EstadoDeOrdenes endpoint="reservas"/>
+          <EstadoDeOrdenes endpoint="reservasFuturas"/>
         </QueryClientProvider>
       </div>
 </div>

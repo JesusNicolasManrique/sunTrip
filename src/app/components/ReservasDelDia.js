@@ -2,12 +2,15 @@ import React from 'react'
 import { useQuery } from 'react-query'
 import axios from 'axios' 
 //import { sharingInformationService } from '../../services/sharing-information.service'
+/* los codigos son tal cosa */
 
+const options = {cacheTime: 5000}
 function ReservasDelDia (props){
   const {endpoint} = props
-  const {isLoading, data} = useQuery('getData', ()=>{
-   return axios.get(`http://localhost:3001/${endpoint}`)
-  })
+  const fetchPasajeros = ()=>{
+    return axios.get(`http://localhost:3001/${endpoint}`)
+  }
+  const {isLoading, data, IsError, errorMessage, IsFetching} = useQuery('getPasajeros', fetchPasajeros, options)
   
   if(isLoading){
      return <h2>Is loading</h2>
@@ -45,10 +48,10 @@ function ReservasDelDia (props){
                     <div className="preview-item-content d-sm-flex flex-grow">
                       <div className="flex-grow">
                         <h6 className="preview-subject">{reserva.nombre}</h6>
-                        <p className="text-muted mb-0">{reserva.bodega}</p>
+                        <p className="text-muted mb-0">{reserva.hotel}</p>
                       </div>
                       <div className="mr-auto text-sm-right pt-2 pt-sm-0">
-                        <p className="text-muted">{reserva.fecha_reserva}</p>
+                        <p className="text-muted">{reserva.horario_reserva}</p>
                         <p className="text-muted mb-0">{reserva.cant_adultos} adulto/s {reserva.cant_menores} menor/es</p>
                       </div>
                     </div>

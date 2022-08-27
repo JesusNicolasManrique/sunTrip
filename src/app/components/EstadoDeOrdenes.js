@@ -1,7 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
+import axios from 'axios'
+import {useQuery} from 'react-query'
 
- function EstadoDeOrdenes () {
+const options = {cacheTime: 5000}
+function ReservasFuturas (props){
+  const {endpoint} = props
+  const fetchPasajeros = ()=>{
+    return axios.get(`http://localhost:3001/${endpoint}`)
+  }
+  const {isLoading, data, IsError, errorMessage, IsFetching} = useQuery('getreservasFuturas', fetchPasajeros, options)
   
+  if(isLoading){
+     return <h2>Is loading</h2>
+  } 
+
         return (
             <div className="col-12 grid-margin">
             <div className="card">
@@ -19,136 +31,47 @@ import React, { Component } from 'react'
                             </label>
                           </div>
                         </th>
+                        <th> Reserva No </th>
+                        <th> Fecha reserva </th>
                         <th> Nombre del Cliente </th>
-                        <th> Orden No </th>
-                        <th> Costo </th>
-                        <th> Vendedor </th>
-                        <th> Modo de Cobro </th>
                         <th> Fecha de llegada </th>
-                        <th> Estado del pago </th>
+                        <th> Vendedor </th>
+                        <th> Precio Venta </th>
+                        <th> Medio de Pago </th>
+                        <th> Estado Reserva </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          <div className="form-check form-check-muted m-0">
-                            <label className="form-check-label">
-                              <input type="checkbox" className="form-check-input" />
-                              <i className="input-helper"></i>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <div className="d-flex">
-                            {/* <img src={require('../../../assets/images/faces/face1.jpg')} alt="face" />
-                             */}<span className="pl-2">Henry Klein</span>
-                          </div>
-                        </td>
-                        <td> 02312 </td>
-                        <td> $14,500 </td>
-                        <td> Dashboard </td>
-                        <td> Credit card </td>
-                        <td> 04 Dec 2019 </td>
-                        <td>
-                          <div className="badge badge-outline-success">Approved</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div className="form-check form-check-muted m-0">
-                            <label className="form-check-label">
-                              <input type="checkbox" className="form-check-input" />
-                              <i className="input-helper"></i>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <div className="d-flex">
-                            {/* <img src={require('../../../assets/images/faces/face2.jpg')} alt="face" />
-                             */}<span className="pl-2">Estella Bryan</span>
-                          </div>
-                        </td>
-                        <td> 02312 </td>
-                        <td> $14,500 </td>
-                        <td> Website </td>
-                        <td> Cash on delivered </td>
-                        <td> 04 Dec 2019 </td>
-                        <td>
-                          <div className="badge badge-outline-warning">Pending</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div className="form-check form-check-muted m-0">
-                            <label className="form-check-label">
-                              <input type="checkbox" className="form-check-input" />
-                              <i className="input-helper"></i>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <div className="d-flex">
-                            {/* <img src={require('../../../assets/images/faces/face5.jpg')} alt="face" />
-                             */}<span className="pl-2">Lucy Abbott</span>
-                          </div>
-                        </td>
-                        <td> 02312 </td>
-                        <td> $14,500 </td>
-                        <td> App design </td>
-                        <td> Credit card </td>
-                        <td> 04 Dec 2019 </td>
-                        <td>
-                          <div className="badge badge-outline-danger">Rejected</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div className="form-check form-check-muted m-0">
-                            <label className="form-check-label">
-                              <input type="checkbox" className="form-check-input" />
-                              <i className="input-helper"></i>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <div className="d-flex">
-                            {/* <img src={require('../../../assets/images/faces/face3.jpg')} alt="face" />
-                             */}<span className="pl-2">Peter Gill</span>
-                          </div>
-                        </td>
-                        <td> 02312 </td>
-                        <td> $14,500 </td>
-                        <td> Development </td>
-                        <td> Online Payment </td>
-                        <td> 04 Dec 2019 </td>
-                        <td>
-                          <div className="badge badge-outline-success">Approved</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div className="form-check form-check-muted m-0">
-                            <label className="form-check-label">
-                              <input type="checkbox" className="form-check-input" />
-                              <i className="input-helper"></i>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <div className="d-flex">
-                            {/* <img src={require('../../../assets/images/faces/face4.jpg')} alt="face" />
-                             */}<span className="pl-2">Sallie Reyes</span>
-                          </div>
-                        </td>
-                        <td> 02312 </td>
-                        <td> $14,500 </td>
-                        <td> Website </td>
-                        <td> Credit card </td>
-                        <td> 04 Dec 2019 </td>
-                        <td>
-                          <div className="badge badge-outline-success">Approved</div>
-                        </td>
-                      </tr>
+                    {
+                      data.data.map(reservaFutura =>{  
+                      return (
+                          <tr>
+                            <td>
+                              <div className="form-check form-check-muted m-0">
+                                <label className="form-check-label">
+                                  <input type="checkbox" className="form-check-input" />
+                                  <i className="input-helper"></i>
+                                </label>
+                              </div>
+                            </td>
+                            <td> {reservaFutura.id_reserva} </td>
+                            <td> {reservaFutura.fecha_reserva} </td>
+                            <td>
+                              <div className="d-flex">
+                                {/* <img src={require('../../../assets/images/faces/face1.jpg')} alt="face" />
+                                */}<span className="pl-2">{reservaFutura.nombreTitularReserva}</span>
+                              </div>
+                            </td>
+                            <td> {reservaFutura.llegada_resera} </td>
+                            <td> {reservaFutura.vendedor} </td>
+                            <td> {reservaFutura.precio_venta}  </td>
+                            <td> {reservaFutura.medio_pago} </td>
+                            <td>
+                              <div className={`${reservaFutura.icon_estado}`}>{reservaFutura.estado}</div>
+                            </td>
+                          </tr>
+                        )})
+                     }
                     </tbody>
                   </table>
                 </div>
@@ -160,4 +83,4 @@ import React, { Component } from 'react'
     
 }
 
-export default EstadoDeOrdenes
+export default ReservasFuturas

@@ -6,8 +6,13 @@ import { Doughnut } from 'react-chartjs-2';
 const cacheTime = {cacheTime: 5000, refetchIntervalInBackground:true}
 function Cobros (props){
   const {endpoint} = props
+  const auth = {auth: {
+    username: "Jesu",
+    password: "123"
+  }
+}
   const fetchCobros = ()=>{
-    return axios.get(`http://localhost:3001/${endpoint}`)
+    return axios.get(`http://localhost:3001/${endpoint},{auth}`)
   }
   const {isLoading, data, IsError, error, IsFetching} = useQuery('getCobros', fetchCobros, cacheTime)
   
